@@ -13,9 +13,8 @@ done <<< 'git pip3'
 
 echo -e "Cloando projeto..."
 git clone https://github.com/GlEmYsSoN444/tron_ssh.git &>/dev/null
-
 echo -e "Instalando requirimentos..."
-pip3 install -r tron_ssh/requirements.txt &>/de/null
+pip3 install -r tron_ssh/requirements.txt &>/dev/null
 chmod +x tron_ssh/tron
 mv tron_ssh/tron /bin
 mv tron_ssh/tron_ssh /etc
