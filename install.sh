@@ -2,7 +2,7 @@
 
 [[ $(id -u) != 0 ]] && echo -e "Execute esse script com permissao de root" && exit 1
 
-while read pkt; then
+while read pkt; do
     if ! which $pkt &>/dev/null; then
         echo -ne "Instalando $pkt... "
         apt-get install $pkt &>/dev/null
@@ -17,6 +17,6 @@ echo -e "Instalando requirimentos..."
 pip3 install -r tron_ssh/requirements.txt &>/de/null
 chmod +x tron_ssh/tron
 mv tron_ssh/tron /bin
-mv tron_ssh /etc
+mv tron_ssh/tron_ssh /etc
 echo -e "Instalacao efetuada com sucesso"
 echo -e "Execute: tron"
