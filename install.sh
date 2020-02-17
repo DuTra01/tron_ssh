@@ -3,7 +3,7 @@
 [[ $(id -u) != 0 ]] && echo -e "Execute esse script com permissao de root" && exit 1
 [[ -d /etc/tron_ssh ]] && rm -rf /etc/tron_ssh
 
-while read pkt; then
+while read pkt; do
     if ! which $pkt &>/dev/null; then
         echo -ne "Instalando $pkt... "
         apt-get install $pkt &>/dev/null
