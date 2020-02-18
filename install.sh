@@ -3,13 +3,13 @@
 [[ $(id -u) != 0 ]] && echo -e "Execute esse script com permissao de root" && exit 1
 [[ -d /etc/tron_ssh ]] && rm -rf /etc/tron_ssh
 
-while read pkt; do
+for pkt in git pip3; do
     if ! which $pkt &>/dev/null; then
         echo -ne "Instalando $pkt... "
         apt-get install $pkt &>/dev/null
         echo -e 'Ok'
     fi
-done <<< 'git pip3'
+done
 
 echo -e "Cloando projeto..."
 git clone https://github.com/GlEmYsSoN444/tron_ssh.git &>/dev/null
